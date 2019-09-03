@@ -13,7 +13,7 @@ WORKAREA.registerModule('gdprPopup', (function () {
         },
 
         showPopup = function () {
-            var $dialog = WORKAREA.dialog.createFromTemplate(
+            WORKAREA.dialog.createFromTemplate(
                 { path: 'workarea/storefront/gdpr/templates/popup' },
                 {
                     uiDialogOptions: {
