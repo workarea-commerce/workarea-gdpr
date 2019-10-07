@@ -1,6 +1,8 @@
 Workarea.configure do |config|
-  config.inquiry_subjects['gdpr'] = 'GDPR Request'
+  field = config.admin_definition.fields.detect { |f| f.id == :inquiry_subjects }
+  field.options[:default].merge!('gdpr' => 'GDPR Request')
 end
+
 
 unless Rails.env.test?
   Workarea::Plugin.append_javascripts(
